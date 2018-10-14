@@ -31,7 +31,7 @@ Example of the translation map follows. Note that the user defines the string th
 }
 ```
 
-Suppose client sends the following HTTP GET request:
+Suppose the client sends the following HTTP GET request:
 
 http://api.example.com/some/path/
 
@@ -44,6 +44,6 @@ Suppose the client sends the following HTTP GET request:
 
 http://api.example.com/planet/path?name=jupiter
 
-The best match will be the 3rd object in the **matches** list where the **method** and the **uri** are exact matches. 
+The best match will be the 3rd object in the **matches** list where the **method** and **uri** are exact matches. 
 
 The query parameter is **name** which matches the variable in the **resource**. Therefore we have a full match and the returned translation tuple will be: "retrieve", "planet.jupiter"
