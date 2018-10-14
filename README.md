@@ -10,14 +10,14 @@ Example of the translation map follows. Note that the user defines the string th
   namespace: "final-frontier",
   matches: [
     { 
-      uri: "/some/path/",
-      resource: "getting.path",
+      uri: "/paths/",
+      resource: "getting.paths",
       method: "get",
       action: "read"
     },
     { 
-      uri: "/some/path/",
-      resource: "updating.path",
+      uri: "/paths/",
+      resource: "updating.paths",
       method: "put",
       action: "update"
     },
@@ -31,20 +31,20 @@ Example of the translation map follows. Note that the user defines the string th
 }
 ```
 
-Suppose the client sends the following HTTP GET request:
+## Suppose the client sends the following HTTP GET request:
 
-http://api.example.com/some/path/
+http://api.finalfrontier.com/paths/
 
 The best match will be the first object in the **matches** list where the **method** and **uri** are exact matches.
-The returned translation will be the tuple: **{ "read", "getting.path" }**
+The returned translation will be the tuple: **{ "read", "getting.paths" }**
 
-If configured to use the **namespace**, the returned tuple may be something like: **{ "read", "final-frontier:getting.path" }**
+If configured to use the **namespace**, the returned tuple may be something like: **{ "read", "final-frontier:getting.paths" }**
 
 Notice the 2nd object in the list, although matches the **uri**, does not match the **method**, therefore that object is ignored.
 
-Suppose the client sends the following HTTP GET request:
+## Suppose the client sends the following HTTP GET request:
 
-http://api.example.com/planet/path?name=jupiter
+http://api.finalfrontier.com/planet/path?name=jupiter
 
 The best match will be the 3rd object in the **matches** list where the **method** and **uri** are exact matches. 
 
