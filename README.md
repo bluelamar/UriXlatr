@@ -52,7 +52,7 @@ The query parameter is **name** which matches the variable in the **resource**. 
 
 If configured to use the **namespace**, the returned tuple may be something like: **{ "retrieve", "final-frontier:planet.jupiter" }**
 
-## Example showing variable in **uri** used in **resource**:
+## Example showing variable in **uri** and **resource**:
 
 Suppose we have this map object:
 
@@ -72,7 +72,7 @@ http://api.finalfrontier.com/planet/path/earth
 In this case, the **uri** will match positionally with variable **name** in the **uri**. This matched variable will then be used in the **resource** string.
 Therefore we have a match and the returned translation tuple will be: **{ "emplace", "planet.jupiter" }**
 
-## Example showing multiple variables in **uri** and used in **resource**:
+## Example showing multiple variables in **uri** and **resource**:
 
 Suppose we have this map object:
 
