@@ -52,3 +52,22 @@ The query parameter is **name** which matches the variable in the **resource**. 
 
 If configured to use the **namespace**, the returned tuple may be something like: **{ "retrieve", "final-frontier:planet.jupiter" }**
 
+## Example showing variable in **uri** used in **resource**:
+
+Suppose we have this map object:
+
+```
+{
+  "uri": "/planet/path/${name}",
+  "resource": "planet.${name}",
+  "method": "post",
+  "action": "emplace"
+}
+```
+
+Then a **POST** request is sent to :
+
+http://api.finalfrontier.com/planet/path/earth
+
+In this case, the **uri** will match positionally with variable **name** in the **uri**. This matched variable will then be used in the **resource** string.
+Therefore we have a match and the returned translation tuple will be: **{ "emplace", "planet.jupiter" }**
