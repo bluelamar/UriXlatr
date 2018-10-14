@@ -71,3 +71,23 @@ http://api.finalfrontier.com/planet/path/earth
 
 In this case, the **uri** will match positionally with variable **name** in the **uri**. This matched variable will then be used in the **resource** string.
 Therefore we have a match and the returned translation tuple will be: **{ "emplace", "planet.jupiter" }**
+
+## Example showing multiple variables in **uri** and used in **resource**:
+
+Suppose we have this map object:
+
+```
+{
+  "uri": "/planet/${name}/moon/${moon}",
+  "resource": "moon.${moon).planet.${name}",
+  "method": "post",
+  "action": "set"
+}
+```
+
+Then a **POST** request is sent to :
+
+http://api.finalfrontier.com/planet/path/earth
+
+In this case, the **uri** will match positionally with variable **name** in the **uri**. This matched variable will then be used in the **resource** string.
+Therefore we have a match and the returned translation tuple will be: **{ "emplace", "planet.jupiter" }**
