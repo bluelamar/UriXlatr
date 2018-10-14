@@ -22,10 +22,10 @@ Example of the translation map follows. Note that the user defines the string th
       action: "update"
     },
     {
-      uri: "/other/${name}",
-      resource: "other.${name}",
+      uri: "/planet/path",
+      resource: "planet.${name}",
       method: get,
-      action: "read"
+      action: "retrieve"
     }
    ]
 }
@@ -37,3 +37,13 @@ http://api.example.com/some/path/
 
 The best match will be the first object in the **matches** list where the **method** and **uri** are exact matches.
 The returned translation will be the tuple: "read", "getting.path"
+
+Notice the 2nd object in the list, although matches the **uri**, does not match the **method**, therefore that object is ignored.
+
+Suppose the client sends the following HTTP GET request:
+
+http://api.example.com/planet/path?name=jupiter
+
+The best match will be the first object in the **matches** list where the **method** and the **uri** are exact matches. 
+
+The query parameter is **name** which matches the variable in the **resource**. Therefore we have a full match and the returned translation tuple will be: "retrieve", "planet.jupiter"
