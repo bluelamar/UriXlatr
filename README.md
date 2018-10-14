@@ -10,22 +10,22 @@ Example of the translation map follows. Note that the user defines the string th
   namespace: "final-frontier",
   matches: [
     { 
-      uri: "/paths/",
-      resource: "getting.paths",
-      method: "get",
-      action: "read"
+      "uri": "/paths/",
+      "resource": "getting.paths",
+      "method": "get",
+      "action": "read"
     },
     { 
-      uri: "/paths/",
-      resource: "updating.paths",
-      method: "put",
-      action: "update"
+      "uri": "/paths/",
+      "resource": "updating.paths",
+      "method": "put",
+      "action": "update"
     },
     {
-      uri: "/planet/path",
-      resource: "planet.${name}",
-      method: get,
-      action: "retrieve"
+      "uri": "/planet/path",
+      "resource": "planet.${name}",
+      "method": "get",
+      "action": "retrieve"
     }
    ]
 }
