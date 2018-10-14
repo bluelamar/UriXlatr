@@ -87,7 +87,7 @@ Suppose we have this map object:
 
 Then a **POST** request is sent to :
 
-http://api.finalfrontier.com/planet/path/earth/moon/luna
+http://api.finalfrontier.com/planet/earth/moon/luna
 
 In this case, the **uri** will match positionally with variable **name** and **moon** in the **uri**. The matched variables will then be used in the **resource** string. Position doesnt matter, just use of same name.
 Therefore we have a match and the returned translation tuple will be: **{ "setorbit", "moon.luna.planet.jupiter" }**
